@@ -22,6 +22,9 @@ type KernelNodeParams struct {
 	SharedMemBytes uint
 
 	Params []*KernelNodeParams
+
+	Kern CUKernel
+	Ctx  CUContext
 }
 
 func (p *KernelNodeParams) c() *C.CUDA_KERNEL_NODE_PARAMS {
@@ -38,6 +41,8 @@ func (p *KernelNodeParams) c() *C.CUDA_KERNEL_NODE_PARAMS {
 		C.uint(p.SharedMemBytes),
 		nil,
 		nil,
+		p.Kern.kern,
+		p.Ctx.ctx,
 	}
 	return retVal
 }

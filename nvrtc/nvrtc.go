@@ -2,9 +2,7 @@ package nvrtc
 
 //#include <nvrtc.h>
 import "C"
-import (
-	"unsafe"
-)
+import "unsafe"
 
 func Version() (major, minor int, err error) {
 	var maj, min C.int

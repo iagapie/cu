@@ -43,7 +43,7 @@ func generateMappings(appendCurrent bool, fns ...func(buf io.WriteCloser, t *cc.
 	for _, fn := range fns {
 		fn(buf, t)
 	}
-	fmt.Fprintln(buf, "}\n")
+	fmt.Fprintln(buf, "}")
 }
 
 // generateCRUD creates lists of CRUD functions for the generateStubs function to consume

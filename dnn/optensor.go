@@ -75,7 +75,7 @@ func (ctx *Context) DoOp(op *Op,
 	if bData.Uintptr() == cData.Uintptr() && aData.Uintptr() != cData.Uintptr() {
 		// If the input tensor B is the same tensor as the destination tensor C,
 		// then the input tensor A also must be the same tensor as the destination tensor C.
-		return errors.Errorf(memoryError3, cData.Uintptr(), aData.Uintptr(), bData.Uintptr())
+		return errors.Errorf(memoryError3, aData.Uintptr(), bData.Uintptr(), cData.Uintptr())
 	}
 
 	// alpha beta generation

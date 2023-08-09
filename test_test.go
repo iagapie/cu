@@ -11,7 +11,7 @@ const add32PTX = `//
 //
 
 .version 6.5
-.target sm_75
+.target sm_50
 .address_size 64
 
 	// .globl	add32

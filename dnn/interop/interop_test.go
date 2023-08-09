@@ -15,8 +15,9 @@ func TestDescribe(t *testing.T) {
 	t.Logf("%v", desc)
 
 	T2 := tensor.New(tensor.WithShape(2, 3), tensor.Of(tensor.Float32))
-	_, err = Describe(T2)
-	if err == nil {
-		t.Errorf("Expected an error when a tensor < 4D is passed in")
+	desc, err = Describe(T2)
+	if err != nil {
+		t.Fatal(err)
 	}
+	t.Logf("%v", desc)
 }

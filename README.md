@@ -78,8 +78,11 @@ sudo ln -s /PATH/TO/libcuda.so.1 /PATH/TO/libcuda.so
 
 Be careful when using `ln`. This author spent several hours being tripped up by permissions issues.
 
+## Run tests on Linux ##
 
-
+```
+ASSUME_NO_MOVING_GC_UNSAFE_RISK_IT_WITH=go1.21 CGO_CFLAGS="-I/usr/local/cuda/include" CGO_LDFLAGS="-lcuda -lcudnn -lcublas -lnvrtc -L/usr/local/cuda/lib64 -L/usr/lib/x86_64-linux-gnu" go test ./...
+```
 
 # Progress #
 The work to fully represent the CUDA Driver API is a work in progress. At the moment, it is not complete. However, most of the API that are required for GPGPU purposes are complete. None of the texture, surface and graphics related APIs are handled yet. Please feel free to send a pull request.
