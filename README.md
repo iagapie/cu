@@ -81,7 +81,7 @@ Be careful when using `ln`. This author spent several hours being tripped up by 
 ## Run tests on Linux ##
 
 ```
-ASSUME_NO_MOVING_GC_UNSAFE_RISK_IT_WITH=go1.21 CGO_CFLAGS="-I/usr/local/cuda/include" CGO_LDFLAGS="-lcuda -lcudnn -lcublas -lnvrtc -L/usr/local/cuda/lib64 -L/usr/lib/x86_64-linux-gnu" go test ./...
+CGO_CFLAGS="-I/usr/local/cuda/include" CGO_LDFLAGS="-lcuda -lcudnn -lcublas -lnvrtc -L/usr/local/cuda/lib64 -L/usr/lib/x86_64-linux-gnu" go test ./...
 ```
 
 # Progress #

@@ -4,9 +4,9 @@ package main
 import (
 	"fmt"
 
+	"github.com/cloudflare/cfssl/log"
 	"gorgonia.org/cu"
 	"os"
-	"github.com/cloudflare/cfssl/log"
 )
 
 func main() {
